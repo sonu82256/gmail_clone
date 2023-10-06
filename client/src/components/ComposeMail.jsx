@@ -24,7 +24,7 @@ const ComposeMail = ({openDialog, setOpenDialog}) => {
     if (data && data.to !== undefined) {
       const payload = {
         to: data.to,
-        from: 'sonu82256@gmail.com',
+        from: process.env.REACT_APP_Email,
         subject: data.subject,
         body: data.body,
         date: new Date(),
@@ -55,7 +55,7 @@ const ComposeMail = ({openDialog, setOpenDialog}) => {
       window.Email.send({
         ...config,
         To : data.to,
-        From : "sonu82256@gmail.com",
+        From : process.env.REACT_APP_Email,
         Subject : data.subject,
         Body : data.body
 
@@ -66,12 +66,12 @@ const ComposeMail = ({openDialog, setOpenDialog}) => {
 
     const payload = {
       to : data.to,
-      from : 'sonu82256@gmail.com',
+      from : process.env.REACT_APP_Email,
       subject : data.subject,
       body : data.body,
       date: new Date(),
       image: '',
-      name: 'sonu82256@gmail.com',
+      name: process.env.REACT_APP_Email,
       starred: false,
       type: 'sent'
     }
